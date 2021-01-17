@@ -1,19 +1,20 @@
 import React from "react";
 import styled from "styled-components";
 import Details from "./components/Details/Details";
+import Main from "./components/Main/Main";
 
 const App = () => {
   return (
     <div>
       <Wrapper>
         <BoxAreaMain>
-          <Details />
+          <Main />
         </BoxAreaMain>
         <BoxArea>
-          <Details />
+          <Details title='Income' />
         </BoxArea>
         <BoxArea>
-          <Details />
+          <Details title='Expenses' />
         </BoxArea>
       </Wrapper>
     </div>
@@ -30,7 +31,7 @@ const Wrapper = styled.div`
 const BoxAreaMain = styled.div`
   width: 80%;
   position: relative;
-  top: 40vh;
+  top: 400px;
   @media (max-width: 768px) {
     display: flex;
     justify-content: center;

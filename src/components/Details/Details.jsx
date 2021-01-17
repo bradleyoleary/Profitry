@@ -1,12 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 import { Doughnut } from "react-chartjs-2";
+import Form from "../Main/Form/Form";
 
-const Details = () => {
+const Details = ({ title }) => {
   return (
     <Card>
-      <CardTitle>Income</CardTitle>
-      <CardContent>$100</CardContent>
+      <CardTitle>
+        {title}
+        <CardContent>$100</CardContent>
+      </CardTitle>
       {/* <Doughnut data='Data' /> */}
     </Card>
   );
@@ -26,7 +29,11 @@ const Card = styled.div`
   }
 `;
 
-const CardTitle = styled.h1``;
+const CardTitle = styled.p`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
 
 const CardContent = styled.p``;
 
