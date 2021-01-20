@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   List as MUIList,
   ListItem,
@@ -11,9 +11,12 @@ import {
 } from "@material-ui/core";
 import { Delete, MoneyOff, AttachMoney } from "@material-ui/icons";
 import useStyles from "./styles";
+import { MainContext } from "../../../context/context";
 
 const List = () => {
   const classes = useStyles();
+  const { deleteTransaction } = useContext(MainContext);
+
   const transactions = [
     {
       id: 1,

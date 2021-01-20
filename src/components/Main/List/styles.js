@@ -10,7 +10,7 @@ export default makeStyles(() => ({
     backgroundColor: red[500],
   },
   list: {
-    maxHeight: "180px",
+    maxHeight: "150px",
     overflow: "auto",
   },
 }));
