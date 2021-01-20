@@ -1,34 +1,52 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import styled from "styled-components";
 import {
   TextField,
-  Typography,
+  // Typography,
   Grid,
-  Button,
   FormControl,
   InputLabel,
   Select,
   MenuItem,
 } from "@material-ui/core";
-import useStyles from "./styles";
+import { MainContext } from "../../../context/context";
+import { v4 as uuidv4 } from "uuid";
+import formatDate from "../../../utils/formatDate";
+import {
+  incomeCategories,
+  expenseCategories,
+} from "../../../constants/categories";
 
 const initialState = {
   amount: "",
   category: "",
   type: "Income",
-  date: new Date(),
+  date: formatDate(new Date()),
 };
 
 const Form = () => {
-  const classes = useStyles();
   const [formData, setFormData] = useState(initialState);
-  console.group(formData);
+  const { addTransaction } = useContext(MainContext);
+
+  const createTransaction = () => {
+    const transaction = {
+      ...formData,
+      amount: Number(formData.amount),
+      id: uuidv4(),
+    };
+    addTransaction(transaction);
+    setFormData(initialState);
+  };
+
+  const selectedCategories =
+    formData.type === "Income" ? incomeCategories : expenseCategories;
 
   return (
-    <Grid container spacing={2}>
+    <Grid container spacing={2} style={{ padding: "2em" }}>
       <Grid item xs={12}>
-        <Typography align='centre' variant='subtitle2' gutterBottom>
+        {/* <Typography align='centre' variant='subtitle2' gutterBottom>
           ...
-        </Typography>
+        </Typography> */}
       </Grid>
       <Grid item xs={6}>
         <FormControl fullWidth>
@@ -51,8 +69,11 @@ const Form = () => {
             onChange={(ev) =>
               setFormData({ ...formData, category: ev.target.value })
             }>
-            <MenuItem value='business'>Business</MenuItem>
-            <MenuItem value='salary'>Salary</MenuItem>
+            {selectedCategories.map((category) => (
+              <MenuItem key={category.type} value={category.type}>
+                {category.type}
+              </MenuItem>
+            ))}
           </Select>
         </FormControl>
       </Grid>
@@ -73,12 +94,27 @@ const Form = () => {
           label='Date'
           fullWidth
           value={formData.date}
-          onChange={(ev) => setFormData({ ...formData, date: ev.target.value })}
+          onChange={(ev) =>
+            setFormData({ ...formData, date: formatDate(ev.target.value) })
+          }
         />
       </Grid>
-      <Button fullWidth>Create</Button>
+      <Button onClick={createTransaction}>Create</Button>
     </Grid>
   );
 };
+
+const Button = styled.button`
+  width: 100%;
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 1.2em;
+  margin-top: 24px;
+  font-size: 1.1em;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+`;
 
 export default Form;

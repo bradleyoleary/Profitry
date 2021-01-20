@@ -15,8 +15,11 @@ export const Provider = ({ children }) => {
   const addTransaction = (transaction) =>
     dispatch({ type: "ADD_TRANSACTION", payload: transaction });
 
+  console.log(transactions);
+
   return (
-    <MainContext.Provider value={{ deleteTransaction, addTransaction }}>
+    <MainContext.Provider
+      value={{ deleteTransaction, addTransaction, transactions }}>
       {children}
     </MainContext.Provider>
   );

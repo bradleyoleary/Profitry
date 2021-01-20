@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { Doughnut } from "react-chartjs-2";
-import Form from "../Main/Form/Form";
 
 const Details = ({ title }) => {
   return (
