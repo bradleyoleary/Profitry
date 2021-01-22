@@ -20,7 +20,7 @@ import {
 const initialState = {
   amount: "",
   category: "",
-  type: "Income",
+  type: "",
   date: formatDate(new Date()),
 };
 

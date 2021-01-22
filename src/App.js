@@ -7,7 +7,7 @@ const App = () => {
   return (
     <Wrapper>
       <LeftContainer>
-        <Main />
+        <Main incomeTitle='I have' expensesTitle='I spent' />
       </LeftContainer>
       {/* <RightContainer> */}
       <RightContainer>

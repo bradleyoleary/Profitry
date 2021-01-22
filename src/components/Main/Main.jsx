@@ -4,20 +4,20 @@ import { COLORS } from "../../Constants";
 import Form from "./Form/Form";
 import List from "./List/List";
 
-const Main = () => {
+const Main = ({ incomeTitle, expensesTitle }) => {
   return (
     <Card>
       <CardTitle>My Balances</CardTitle>
       <TopWrapper>
         <Subtitle>
-          I have
+          {incomeTitle}
           <br />
-          <Amount>-</Amount>
+          <Amount>$ -</Amount>
         </Subtitle>
         <Subtitle>
-          I've spent
+          {expensesTitle}
           <br />
-          <Amount>-</Amount>
+          <Amount>$ -</Amount>
         </Subtitle>
       </TopWrapper>
       <Form />
