@@ -9,16 +9,7 @@ const Main = ({ incomeTitle, expensesTitle }) => {
     <Card>
       <CardTitle>My Balances</CardTitle>
       <TopWrapper>
-        <Subtitle>
-          {incomeTitle}
-          <br />
-          <Amount>$ -</Amount>
-        </Subtitle>
-        <Subtitle>
-          {expensesTitle}
-          <br />
-          <Amount>$ -</Amount>
-        </Subtitle>
+        <Subtitle>Try using the 🎙 button!</Subtitle>
       </TopWrapper>
       <Form />
       <List />
