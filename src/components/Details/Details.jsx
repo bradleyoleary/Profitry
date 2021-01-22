@@ -1,15 +1,17 @@
 import React from "react";
 import styled from "styled-components";
-import { Doughnut } from "react-chartjs-2";
+import useTransactions from "../../useTransactions";
+import { Polar } from "react-chartjs-2";
 
 const Details = ({ title }) => {
+  const { total, chartData } = useTransactions(title);
   return (
     <Card>
       <CardTitle>
         {title}
-        <CardContent>$100</CardContent>
+        <CardContent>${total}</CardContent>
       </CardTitle>
-      {/* <Doughnut data='Data' /> */}
+      <Polar data={chartData} />
     </Card>
   );
 };
@@ -17,15 +19,17 @@ const Details = ({ title }) => {
 const Card = styled.div`
   background: white;
   padding: 10px;
-  margin: 20px;
+  margin: 10px;
   border-radius: 18px;
-  width: 50%;
-  @media (max-width: 768px) {
+  /* height: 20em;
+  width: 25em; */
+  /* justify-content: center; */
+  /* @media (max-width: 768px) {
     flex-direction: column;
     color: red;
     width: 90%;
     display: flex;
-  }
+  } */
 `;
 
 const CardTitle = styled.p`

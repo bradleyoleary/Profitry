@@ -12,12 +12,12 @@ const Main = () => {
         <Subtitle>
           I have
           <br />
-          <Amount>$1000</Amount>
+          <Amount>-</Amount>
         </Subtitle>
         <Subtitle>
           I've spent
           <br />
-          <Amount>$1000</Amount>
+          <Amount>-</Amount>
         </Subtitle>
       </TopWrapper>
       <Form />
@@ -31,12 +31,14 @@ const Card = styled.div`
   padding: 10px;
   margin: 20px;
   border-radius: 18px;
-  width: 50%;
+  width: 80%;
   @media (max-width: 768px) {
     flex-direction: column;
     color: red;
-    width: 90%;
+    width: 100%;
     display: flex;
+    padding: 10px;
+    margin: 10px;
   }
 `;
 
