@@ -108,8 +108,12 @@ const Form = () => {
   return (
     <Grid container spacing={2} style={{ padding: "2em" }}>
       <Grid item xs={12}>
-        <Typography align='centre' variant='subtitle2' gutterBottom>
-          "{segment && segment.words.map((word) => word.value).join(" ")}"
+        <Typography
+          align='centre'
+          variant='subtitle2'
+          style={{ color: "#818181", fontStyle: "italic" }}
+          gutterBottom>
+          {segment && segment.words.map((word) => word.value).join(" ")}
         </Typography>
       </Grid>
       <Grid item xs={6}>

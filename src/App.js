@@ -10,21 +10,15 @@ import {
 
 const App = () => {
   return (
-    <>
-      <Wrapper>
-        <LeftContainer>
-          <Main incomeTitle='I have' expensesTitle='I spent' />
-        </LeftContainer>
-        <RightContainer>
-          <Details title='Income' />
-          <Details title='Expense' />
-        </RightContainer>
-      </Wrapper>
-      <PushToTalkButtonContainer>
-        <PushToTalkButton />
-        <ErrorPanel />
-      </PushToTalkButtonContainer>
-    </>
+    <Wrapper>
+      <LeftContainer>
+        <Main incomeTitle='I have' expensesTitle='I spent' />
+      </LeftContainer>
+      <RightContainer>
+        <Details title='Income' />
+        <Details title='Expense' />
+      </RightContainer>
+    </Wrapper>
   );
 };
 
@@ -32,12 +26,12 @@ const Wrapper = styled.div`
   display: flex;
   margin: 0 auto;
   width: 65%;
-  padding: 10px;
+  /* padding: 10px; */
   @media (max-width: 768px) {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    margin: 0 auto;
+    /* justify-content: center;
+    margin: 0 auto; */
     width: 100%;
   }
 `;

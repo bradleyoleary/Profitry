@@ -1,15 +1,21 @@
 import React from "react";
 import styled from "styled-components";
-import { COLORS } from "../../Constants";
+import { COLORS } from "../../Colors";
 import Form from "./Form/Form";
 import List from "./List/List";
+import { PushToTalkButton, ErrorPanel } from "@speechly/react-ui";
 
 const Main = ({ incomeTitle, expensesTitle }) => {
   return (
     <Card>
       <CardTitle>My Balances</CardTitle>
       <TopWrapper>
-        <Subtitle>Try using the 🎙 button!</Subtitle>
+        <Subtitle>Try using the this button!</Subtitle>
+        <PushToTalkButton
+          size='4.5rem'
+          gradientStops={["#87E2BF", "#0fc77f"]}
+        />
+        <ErrorPanel />
       </TopWrapper>
       <Form />
       <List />
@@ -49,9 +55,9 @@ const TopWrapper = styled.div`
   margin: 0 20px;
 `;
 
-const Amount = styled.p`
-  font-weight: bold;
-  color: black;
-`;
+// const Amount = styled.p`
+//   font-weight: bold;
+//   color: black;
+// `;
 
 export default Main;
