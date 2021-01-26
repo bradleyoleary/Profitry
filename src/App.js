@@ -2,11 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import Details from "./components/Details/Details";
 import Main from "./components/Main/Main";
-import {
-  PushToTalkButton,
-  PushToTalkButtonContainer,
-  ErrorPanel,
-} from "@speechly/react-ui";
 
 const App = () => {
   return (
@@ -26,12 +21,9 @@ const Wrapper = styled.div`
   display: flex;
   margin: 0 auto;
   width: 65%;
-  /* padding: 10px; */
   @media (max-width: 768px) {
     display: flex;
     flex-direction: column;
-    /* justify-content: center;
-    margin: 0 auto; */
     width: 100%;
   }
 `;

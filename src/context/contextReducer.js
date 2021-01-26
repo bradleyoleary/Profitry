@@ -1,3 +1,4 @@
+//Set up reducer for adding and removing transaction
 const contextReducer = (state, action) => {
   let transactions;
 

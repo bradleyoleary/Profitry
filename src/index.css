@@ -6,7 +6,21 @@ html {
 }
 
 body {
-  background: #d8dfe5;
+  background: url(./assets/Background.svg) no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
   font-family: "Open Sans", sans-serif;
+}
+
+@media (max-width: 768px) {
+  body {
+    background: #3498db;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: "Open Sans", sans-serif;
+  }
 }

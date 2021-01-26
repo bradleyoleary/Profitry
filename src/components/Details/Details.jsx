@@ -21,7 +21,9 @@ const Card = styled.div`
   background: white;
   padding: 10px;
   margin: 10px;
-  border-radius: 18px;
+  border-radius: 14px;
+  -webkit-box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.12);
 `;
 
 const CardTitle = styled.span`

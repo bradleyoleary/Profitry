@@ -10,7 +10,9 @@ const Main = ({ incomeTitle, expensesTitle }) => {
     <Card>
       <CardTitle>My Balances</CardTitle>
       <TopWrapper>
-        <Subtitle>Try using the this button!</Subtitle>
+        <Subtitle>
+          Try using the <strong>Speechly</strong> button!
+        </Subtitle>
         <PushToTalkButton
           size='4.5rem'
           gradientStops={["#87E2BF", "#0fc77f"]}
@@ -27,8 +29,10 @@ const Card = styled.div`
   background: white;
   padding: 10px;
   margin: 20px;
-  border-radius: 18px;
+  border-radius: 14px;
   width: 80%;
+  -webkit-box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.12);
   @media (max-width: 768px) {
     flex-direction: column;
     color: red;
@@ -54,10 +58,5 @@ const TopWrapper = styled.div`
   justify-content: space-between;
   margin: 0 20px;
 `;
-
-// const Amount = styled.p`
-//   font-weight: bold;
-//   color: black;
-// `;
 
 export default Main;
