@@ -21,7 +21,7 @@ import { useSpeechContext } from "@speechly/react-client";
 const initialState = {
   amount: "",
   category: "",
-  type: "Income",
+  type: "",
   date: formatDate(new Date()),
 };
 

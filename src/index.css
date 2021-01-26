@@ -12,6 +12,7 @@ body {
   -o-background-size: cover;
   background-size: cover;
   font-family: "Open Sans", sans-serif;
+  color: #2b2b2b;
 }
 
 @media (max-width: 768px) {

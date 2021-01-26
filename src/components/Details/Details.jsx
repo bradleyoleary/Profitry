@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import useTransactions from "../../useTransactions";
-import { Polar } from "react-chartjs-2";
+import { Pie } from "react-chartjs-2";
 
 const Details = ({ title }) => {
   const { total, chartData } = useTransactions(title);
@@ -12,7 +12,7 @@ const Details = ({ title }) => {
         {title}
         <p>${total}</p>
       </CardTitle>
-      <Polar data={chartData} />
+      <Pie data={chartData} />
     </Card>
   );
 };
